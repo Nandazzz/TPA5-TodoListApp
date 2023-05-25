@@ -8,18 +8,14 @@ import Todos from "../components/Todos";
 
 function TodoPage() {
   const dispatch = useDispatch();
-  //Set editFormVisibility state to handle edit form
   const [editFormVisibility, setEditFormVisibility] = useState(false);
-  //Set editTodo state to catch editTodo value from Todos component child
   const [editTodo, setEditTodo] = useState("");
 
-  //Set function handleEditClick to catch todo object value from button edit todo from Todos component child
   const handleEditClick = (todo) => {
     setEditFormVisibility(true);
     setEditTodo(todo);
   };
 
-  //Set function cancelUpdate to cahnge Edit Form visibility to false(hidden)
   const cancelUpdate = () => {
     setEditFormVisibility(false);
   };

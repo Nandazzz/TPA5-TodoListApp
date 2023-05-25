@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-//Sweet alert with react content
 const MySwal = withReactContent(Swal);
 
 function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
@@ -15,11 +14,9 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
   const [editValue, setEditValue] = useState("");
 
   useEffect(() => {
-    //Catch edit todo from props and set to edit state
     setEditValue(editTodo.todo);
   }, [editTodo]);
 
-  //Submit Todo
   const handleSubmit = (e) => {
     e.preventDefault();
     const todoObj = {
@@ -27,9 +24,9 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
       todo: todoValue,
       isCompleted: false,
     };
-    //Dispatch and send object to action addTodo
+
     dispatch(addTodo(todoObj));
-    MySwal.fire("Success!", "Succesfully added some todo.", "success");
+    MySwal.fire("Behasil!", "Jadwal Kamu Berhasil Ditambahkan");
     e.target.reset();
   };
 
@@ -41,9 +38,9 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
       todo: editValue,
       completed: false,
     };
-    //Dispatch and send object to action editTodoSubmit
+
     dispatch(editTodoSubmit(editObj));
-    MySwal.fire("Success!", "Your todo has been updated.", "success");
+    MySwal.fire("Berhasil!", "Jadwal Kamu Berhasil Diperbaharui");
     e.target.reset();
     cancelUpdate();
   };
@@ -58,13 +55,17 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
           <Form.Group className="d-flex">
             <input
               type="text"
-              className="border border-2 form-control"
+              className="border border-3 form-control rounded-4"
               onChange={(e) => setTodoValue(e.target.value)}
-              placeholder="Add your Todo List here"
+              placeholder="Tambahkan Jadwal Kamu Disini"
               required
             />
-            <Button type="submit" className="submit ms-2">
-              Add
+            <Button
+              type="submit"
+              className="submit ms-2"
+              variant="outline-primary"
+            >
+              Tambah
             </Button>
           </Form.Group>
         </Form>
@@ -79,11 +80,11 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
               value={editValue || ""}
               className="border border-2 form-control"
               onChange={(e) => setEditValue(e.target.value)}
-              placeholder="Update your Todo Items"
+              placeholder="Ubah Jadwal Kamu Disini."
               required
             />
             <Button type="submit" className="submit ms-2">
-              Update
+              Perbaharui
             </Button>
           </Form.Group>
           <Form.Group className="text-center">
@@ -92,7 +93,7 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
               style={{ width: "300px" }}
               onClick={() => cancelUpdate()}
             >
-              BACK
+              Kembali
             </Button>
           </Form.Group>
         </Form>

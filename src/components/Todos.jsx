@@ -16,17 +16,15 @@ function Todos({ handleEditClick, editFormVisibility }) {
 
   const handleRemove = (id) => {
     MySwal.fire({
-      title: "Are you sure want to delete this todo?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Kamu Mau Menghapus Jadwalmu ?",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "YA, Hapus Jadwal!",
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(removeTodo(id));
-        MySwal.fire("Deleted!", "Your file has been deleted.", "success");
+        MySwal.fire("Berhasil!", "Jadwal Kamu Berhasil Dihapus.");
       }
     });
   };
@@ -40,7 +38,7 @@ function Todos({ handleEditClick, editFormVisibility }) {
           className={filter == null ? "bg-success mx-1" : "bg-secondary mx-1"}
           onClick={() => setFilter(null)}
         >
-          All
+          Semua
         </Badge>
         <Badge
           pill
@@ -48,7 +46,7 @@ function Todos({ handleEditClick, editFormVisibility }) {
           className={filter == false ? "bg-success mx-1" : "bg-secondary mx-1"}
           onClick={() => setFilter(false)}
         >
-          ACTIVE
+          Aktif
         </Badge>
         <Badge
           pill
@@ -56,7 +54,7 @@ function Todos({ handleEditClick, editFormVisibility }) {
           className={filter == true ? "bg-success mx-1" : "bg-secondary mx-1"}
           onClick={() => setFilter(true)}
         >
-          COMPLETED
+          Selesai
         </Badge>
       </Form.Group>
       {state.map((item) => {
