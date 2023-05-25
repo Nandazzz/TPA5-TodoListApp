@@ -78,18 +78,23 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
             <input
               type="text"
               value={editValue || ""}
-              className="border border-2 form-control"
+              className="border border-3 form-control rounded-4"
               onChange={(e) => setEditValue(e.target.value)}
               placeholder="Ubah Jadwal Kamu Disini."
               required
             />
-            <Button type="submit" className="submit ms-2">
+            <Button
+              type="submit"
+              className="submit ms-2"
+              variant="outline-primary"
+            >
               Perbaharui
             </Button>
           </Form.Group>
           <Form.Group className="text-center">
             <Button
               className="btn-sm submit"
+              variant="outline-primary"
               style={{ width: "300px" }}
               onClick={() => cancelUpdate()}
             >
