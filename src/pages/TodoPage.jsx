@@ -26,7 +26,7 @@ function TodoPage() {
 
   return (
     <>
-      <PageTitle children="What's the plan for today?" />
+      <PageTitle children="Apa Rencana Kamu Hari Ini ?" />
       <Container className="mb-5">
         <Row>
           <FormTodo
