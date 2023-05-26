@@ -39,7 +39,6 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
     };
 
     dispatch(editTodoSubmit(editObj));
-    MySwal.fire("Berhasil!", "Jadwal Kamu Berhasil Diperbaharui");
     e.target.reset();
     cancelUpdate();
   };
