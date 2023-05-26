@@ -89,16 +89,10 @@ function Todos({ handleEditClick, editFormVisibility }) {
                   </Form.Group>
                   {!item.isCompleted && (
                     <Form.Group className="col-6 d-flex justify-content-end">
-                      <button
-                        onClick={() => handleEditClick(item)}
-                        className="btn btn-outline-secondary"
-                      >
+                      <button onClick={() => handleEditClick(item)}>
                         <FaEdit />
                       </button>
-                      <button
-                        onClick={() => dispatch(removeTodo(item.id))}
-                        className="mx-2 btn btn-outline-secondary"
-                      >
+                      <button onClick={() => dispatch(removeTodo(item.id))}>
                         <FaTrash />
                       </button>
                     </Form.Group>
