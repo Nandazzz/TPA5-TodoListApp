@@ -26,7 +26,6 @@ function FormTodo({ editFormVisibility, editTodo, cancelUpdate }) {
     };
 
     dispatch(addTodo(todoObj));
-    MySwal.fire("Behasil!", "Jadwal Kamu Berhasil Ditambahkan");
     e.target.reset();
   };
 
