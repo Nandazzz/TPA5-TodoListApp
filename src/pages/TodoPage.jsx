@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "../components/Title";
 import { Container, Row } from "react-bootstrap";
-import FormTodo from "../components/FormTodo";
-import Todos from "../components/Todos";
+import FormTodo from "../components/TodoForm";
+import Todos from "../components/TodoList";
 
 function TodoPage() {
   const dispatch = useDispatch();
